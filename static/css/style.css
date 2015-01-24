@@ -1,0 +1,33 @@
+#nav
+{
+	float: left;
+	margin-left: 10px;
+	margin-bottom: 3px;
+	padding: 3px;
+	width: 10%;
+}
+.page_container
+{
+	width: 60%;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+}
+footer
+{
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.1em;
+	width: auto;
+	text-align: center;
+}
+/* For the timesheet */
+.day
+{
+	margin-top: 10px;
+	text-align: center;
+}
+#day-switch
+{
+	text-align: center;
+}
