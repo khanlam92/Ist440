@@ -39,41 +39,6 @@
 
 </table>
 
-<!-- Create task modal -->
-<div id="create_taskModal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Create Task</h4>
-      </div>
-      <div class="modal-body">
-        
-      	<form>
-		  <div class="form-group">
-		    <label for="work-item">Work Item</label>
-		    <input type="email" class="form-control" id="work-item" placeholder="Enter a new work item">
-		  </div>
-
-		  <div class="form-group">
-		    <label for="details">Details</label>
-		    <input type="email" class="form-control" id="details" placeholder="Enter item details">
-		  </div>
-
-		  <div class="form-group">
-		  	<label for="alloted-time">Alloted Time</label>
-		  	<input type="text" class="form-control" id="alloted-time" placeholder="Enter alloted time">
-		  </div>
-		
-		  <button type="submit" class="btn btn-primary">Submit</button>
-		  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-		</form>
-
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
 <div id="time_container">
 	<div class="btn-group" role="group">
   		<button id="start" type="button" class="btn btn-success btn-lg">Start</button>
