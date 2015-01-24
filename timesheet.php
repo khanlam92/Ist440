@@ -7,9 +7,9 @@
 
 <div class="page_container">	
 <?php include 'templates/banner.html'; ?>
-
 <div class="day">
-	  <h1><?php echo date("l"); ?></h1>
+	<!-- Lowercase L is for day of the week -->
+	<h1><?php echo date("l"); ?></h1>
 </div>
 
 <table class="table table-bordered table-striped table-hover" style="margin-top: 10px;">
@@ -23,7 +23,6 @@
             <th data-field="complete">Completed</th>
         </tr>
     </thead>
-    
     <tbody>
     	<?php for($i=0; $i < 10; $i++) { ?>
         <tr style="cursor: pointer;">
@@ -36,7 +35,6 @@
         </tr>
         <?php } ?>
     </tbody>
-
 </table>
 
 <div id="time_container">
@@ -51,6 +49,11 @@
 <!-- scripts go here -->
 <script type="text/javascript">
 $(document).ready(function(){
+	//Production path
+	//var path = '';
+
+	//Local development path
+	var path = 'http://localhost/IST440Project/';
 
 	$('tbody tr').hover(function(){
 		console.log("HOVER");
@@ -61,11 +64,10 @@ $(document).ready(function(){
 	});
 
 	$('#start').click(function(){
-		//Get the current time
 		var crnt_time = (new Date()).getTime();
 		$.ajax({
 			type: 'post',
-			url: 'log_time.php',
+			url: path+'log_time.php',
 			data: {'type': 0},
 			success: function(response){
 				console.log('timer started');
@@ -75,11 +77,10 @@ $(document).ready(function(){
 	});
 
 	$('#stop').click(function(){
-		//Get the current time
 		var crnt_time = (new Date()).getTime();
 		$.ajax({
 			type: 'post',
-			url: 'log_time.php',
+			url: path+'log_time.php',
 			data: {'type': 1},
 			success: function(response){
 				console.log('timer started');
@@ -87,7 +88,6 @@ $(document).ready(function(){
 			},
 		});
 	});
-
 });
 </script>
 </body>
