@@ -7,18 +7,14 @@
 <link rel="stylesheet" type="text/css" href="static/css/index_style.css">
 
 <div class="page_container">
-
-<!-- Banner -->
-	<div class="page-header">
-	  <h1>Vivus</h1>
-	</div>
+	<?php include 'templates/banner.html'; ?>
 
 	<div id="welcome_header" class="jumbotron">
 		<h1>Manage your time<br>Like a <strong>Boss</strong></h1>
 		<span class="glyphicon glyphicon-usd">Save time, money, and heartache</span><br>
 		<span class="glyphicon glyphicon-tree-conifer">Less tree paper, more green paper.</span><br>
 		<span class="glyphicon glyphicon-plane">See productivity sky rocket</span><br><br>
-		<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+		<p><a class="btn btn-primary btn-lg" href="/about.php" role="button">Learn more</a></p>
 	</div>
 	<!-- Begin Login form -->
 	<form id="login_form">
