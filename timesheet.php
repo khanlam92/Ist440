@@ -12,6 +12,14 @@
 	<h1><?php echo date("l"); ?></h1>
 </div>
 
+<div id="dp"></div>
+
+<script type="text/javascript">
+  var dp = new DayPilot.Scheduler("dp");
+  dp.viewType = "Days";
+  dp.init();
+</script>
+
 <table class="table table-bordered table-striped table-hover" style="margin-top: 10px;">
     <thead>
         <tr>
