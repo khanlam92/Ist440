@@ -14,7 +14,7 @@
 		<span class="glyphicon glyphicon-usd">Save time, money, and heartache</span><br>
 		<span class="glyphicon glyphicon-tree-conifer">Less tree paper, more green paper.</span><br>
 		<span class="glyphicon glyphicon-plane">See productivity sky rocket</span><br><br>
-		<p><a class="btn btn-primary btn-lg" href="/about.php" role="button">Learn more</a></p>
+		<p><a class="btn btn-primary btn-lg" href="about.php" role="button">Learn more</a></p>
 	</div>
 	<!-- Begin Login form -->
 	<form id="login_form">

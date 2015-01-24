@@ -6,6 +6,7 @@
 <?php include 'templates/main_navigation.html'; ?>
 
 <div class="page_container">	
+<?php include 'templates/banner.html'; ?>
 
 <div class="day">
 	  <h1><?php echo date("l"); ?></h1>
@@ -37,10 +38,6 @@
     </tbody>
 
 </table>
-
-<button id="add_task_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#create_taskModal">
-	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-</button>
 
 <!-- Create task modal -->
 <div id="create_taskModal" class="modal fade">
@@ -77,10 +74,10 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<div id="day-switch">
+<div id="time_container">
 	<div class="btn-group" role="group">
-  		<button id="switch-left" type="button" class="btn btn-default glyphicon glyphicon-arrow-left"></button>
-  		<button id="switch-right" type="button" class="btn btn-default glyphicon glyphicon-arrow-right"></button>
+  		<button id="start" type="button" class="btn btn-success btn-lg">Start</button>
+  		<button id="stop" type="button" class="btn btn-danger btn-lg">Stop</button>
 	</div>
 </div>
 
@@ -90,18 +87,6 @@
 <script type="text/javascript">
 $(document).ready(function(){
 
-	$('#add_task_button').hide();
-
-	if(getParameterByName('ut'))
-	{
-		var type = getParameterByName('ut');
-		console.log('Type: ' + type);
-		if(type == 2)
-		{
-			$('#add_task_button').show();
-		}
-	}
-
 	$('tbody tr').hover(function(){
 		console.log("HOVER");
 		$(this).addClass("success");
@@ -110,22 +95,32 @@ $(document).ready(function(){
 		$(this).removeClass("success");
 	});
 
-	function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-	$('#switch-left').click(function(){
-		//update view
-		//ajax 
+	$('#start').click(function(){
+		//Get the current time
+		var crnt_time = (new Date()).getTime();
+		$.ajax({
+			type: 'post',
+			url: 'start_time.php',
+			data: {'start': crnt_time},
+			success: function(response){
+				console.log('timer started');
+				console.log(response);
+			},
+		});
 	});
 
-	$('#switch-right').click(function(){
-		//update view
-		//ajax
-
+	$('#stop').click(function(){
+		//Get the current time
+		var crnt_time = (new Date()).getTime();
+		$.ajax({
+			type: 'post',
+			url: 'stop_time.php',
+			data: {'stop': crnt_time},
+			success: function(response){
+				console.log('timer started');
+				console.log(response);
+			},
+		});
 	});
 
 });
