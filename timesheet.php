@@ -100,8 +100,8 @@ $(document).ready(function(){
 		var crnt_time = (new Date()).getTime();
 		$.ajax({
 			type: 'post',
-			url: 'start_time.php',
-			data: {'start': crnt_time},
+			url: 'log_time.php',
+			data: {'type': 0},
 			success: function(response){
 				console.log('timer started');
 				console.log(response);
@@ -114,8 +114,8 @@ $(document).ready(function(){
 		var crnt_time = (new Date()).getTime();
 		$.ajax({
 			type: 'post',
-			url: 'stop_time.php',
-			data: {'stop': crnt_time},
+			url: 'log_time.php',
+			data: {'type': 1},
 			success: function(response){
 				console.log('timer started');
 				console.log(response);
